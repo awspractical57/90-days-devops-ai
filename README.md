@@ -162,7 +162,7 @@ By **Day 90**, I will have:
 
 ## 🤝 Connect With Me
 
-[![LinkedIn](https://www.linkedin.com/in/valajaharshatheja/)
+[LinkedIn](https://www.linkedin.com/in/valajaharshatheja/)
 
 ---
 
