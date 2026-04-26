@@ -215,7 +215,7 @@ It means "run this file from the current folder." Linux needs this to know you w
 [Day 1 — DevOps + AI Fundamentals](../day-01/)
 
 ## ➡️ Next Day
-[Day 3 — Linux Part 2: Writing Scripts Without AI](../day-03/) *(coming tomorrow)*
+[Day 3 — Linux Part 2: Writing Scripts Without AI](../day-03/) *(coming tomorrow)*.
 
 ---
 
