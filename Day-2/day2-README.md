@@ -8,6 +8,20 @@ We also wrote our very first automation script using AI assistance!
 
 ---
 
+## 🏢 How real companies use Linux
+
+| Company | How they use Linux |
+|---------|------------------|
+| **Google** | Runs all its servers on Linux — including Search, Gmail, YouTube |
+| **Amazon AWS** | Every EC2 instance runs Linux by default |
+| **Netflix** | Their entire streaming infrastructure runs on Linux |
+| **Facebook** | Manages millions of Linux servers using automation |
+| **SpaceX** | Runs flight software on Linux |
+
+> 💡 **95% of the world's servers run Linux.** As a DevOps engineer you will work with Linux every single day — no matter which company you join.
+
+---
+
 ## 🐧 What is Linux and why does it matter?
 
 Linux is the operating system that runs **95% of the world's servers.**
@@ -15,6 +29,30 @@ Linux is the operating system that runs **95% of the world's servers.**
 When you deploy an app to AWS, Google Cloud, or any cloud provider — it runs on Linux. When you work inside Docker containers or Kubernetes — it's Linux underneath.
 
 **As a DevOps engineer, Linux is not optional. It is the foundation of everything.**
+
+---
+
+## 🏗️ Linux Architecture — How it works
+
+```
+┌─────────────────────────────────┐
+│         Your Application        │  ← The app you deploy
+├─────────────────────────────────┤
+│         Shell (Bash)            │  ← Where you type commands
+├─────────────────────────────────┤
+│      System Libraries           │  ← Tools the OS provides
+├─────────────────────────────────┤
+│         Linux Kernel            │  ← The core brain of Linux
+├─────────────────────────────────┤
+│           Hardware              │  ← CPU, RAM, Disk, Network
+└─────────────────────────────────┘
+```
+
+When you type a command in the terminal:
+1. Shell receives your command
+2. Passes it to the Kernel
+3. Kernel talks to hardware
+4. Result comes back to your screen
 
 ---
 
@@ -39,6 +77,8 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 That's it. You now have real Linux on your Windows machine! 🎉
+
+**💰 Cost:** WSL2 is completely free. No AWS needed for this.
 
 ---
 
@@ -102,7 +142,7 @@ When you run `ls -la` you see something like this:
 │  │   │   └── Everyone else: can only read
 │  │   └────── Group: can read and run
 │  └────────── Owner: can read, write and run
-└───────────── - means file, d means folder
+└───────────── - means file / d means folder
 ```
 
 **The 3 permissions:**
@@ -148,30 +188,23 @@ This script shows key information about any Linux system in seconds.
 
 **How to run it:**
 ```bash
-# Step 1 — Make it executable
 chmod +x system-info.sh
-
-# Step 2 — Run it
 ./system-info.sh
 ```
 
-**Expected output:**
-```
-=========================================
-        SYSTEM INFORMATION REPORT
-=========================================
+---
 
-🖥️  Hostname: HARSHA
-📅  Date: Sunday, April 26 2026 | 16:31:00
-⚙️  CPU Usage: 3%
-🧠  Memory: Total: 7.6G | Used: 1.2G | Available: 6.1G
-💾  Disk: /dev/sdb  251G  2.1G  249G  1%
-🔄  Top 5 Processes listed...
+## 🔧 Troubleshooting — common errors and fixes
 
-=========================================
-Report generated successfully!
-=========================================
-```
+| Error | Why it happens | Fix |
+|-------|---------------|-----|
+| `Permission denied` | File is not executable | Run `chmod +x filename.sh` |
+| `command not found` | Tool not installed | Run `sudo apt install toolname -y` |
+| `No such file or directory` | Wrong path or filename | Run `ls` to check exact filename |
+| `chown: invalid user` | Used placeholder text literally | Replace `user` and `group` with real values |
+| WSL2 not installing | Windows version too old | Update Windows to version 2004 or higher |
+| `bash: ./script.sh: Permission denied` | Script not executable | Run `chmod +x script.sh` first |
+| nano won't save | Wrong key combination | Press Ctrl+X → then Y → then Enter |
 
 ---
 
@@ -185,15 +218,36 @@ Report generated successfully!
 
 > **Lesson 4:** AI can write scripts for you. But always read every line and understand it. That understanding is what makes you a real engineer — not just someone copy-pasting.
 
+> **Lesson 5:** In Linux documentation, words like `user`, `group`, `filename` are placeholders. Always replace them with real values before running.
+
 ---
 
-## ❓ Common beginner questions
+## 🎯 Interview questions — practice these after Day 2
+
+1. **What is the difference between Linux and Windows for servers?**
+   > Linux is free, open source, more stable, more secure, and uses fewer resources. 95% of servers run Linux. Windows Server is used mainly in Microsoft-heavy enterprise environments.
+
+2. **What does `chmod 755` mean?**
+   > 7 = owner has read+write+execute. 5 = group has read+execute. 5 = everyone else has read+execute. The owner can do everything, others can read and run but not modify.
+
+3. **How do you find which process is using the most CPU?**
+   > `top` or `ps aux --sort=-%cpu | head -10` — sorts all processes by CPU usage and shows the top 10.
+
+4. **What is the difference between `rm` and `rm -rf`?**
+   > `rm` deletes a single file. `rm -rf` deletes a folder and everything inside it recursively and forcefully. Be very careful with `rm -rf` — it cannot be undone.
+
+5. **How do you search for text inside a file?**
+   > Using `grep`. Example: `grep "error" logfile.txt` finds every line containing the word "error". Use `grep -r "error" /var/logs/` to search recursively through all files in a folder.
+
+---
+
+## ❓ Frequently asked questions
 
 **Q: Do I need to buy a Linux machine?**
 No! WSL2 gives you real Linux inside Windows for free.
 
 **Q: What if I type a wrong command?**
-Most commands are safe. Just avoid `rm -rf` on important folders — that deletes permanently.
+Most commands are safe. Just avoid `rm -rf` on important folders — that deletes permanently with no undo.
 
 **Q: Why do commands have a `#` after them?**
 The `#` starts a comment — it's just a note for humans. Linux ignores everything after `#` on the same line.
@@ -201,13 +255,26 @@ The `#` starts a comment — it's just a note for humans. Linux ignores everythi
 **Q: What does `./` mean before a script name?**
 It means "run this file from the current folder." Linux needs this to know you want to run a local file.
 
+**Q: What is `sudo`?**
+`sudo` means "run this as administrator." Some commands need special permissions — prefix them with `sudo` to get those permissions.
+
 ---
 
-## 📚 Want to learn more?
+## 📚 Resources to go deeper
 
 - [Linux Command Line Basics — Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners)
 - [Bash Scripting Guide](https://www.gnu.org/software/bash/manual/)
 - [WSL2 Official Docs](https://learn.microsoft.com/en-us/windows/wsl/)
+- [Linux Journey — interactive learning](https://linuxjourney.com/)
+
+---
+
+## 📁 Files in this folder
+
+| File | What it is |
+|------|-----------|
+| `README.md` | This file — Day 2 complete guide |
+| `system-info.sh` | Bash script that displays system information |
 
 ---
 
@@ -215,7 +282,7 @@ It means "run this file from the current folder." Linux needs this to know you w
 [Day 1 — DevOps + AI Fundamentals](../day-01/)
 
 ## ➡️ Next Day
-[Day 3 — Linux Part 2: Writing Scripts Without AI](../day-03/) *(coming tomorrow)*.
+[Day 3 — Linux Part 2: Processes, Services, Networking](../day-03/)
 
 ---
 

@@ -13,6 +13,20 @@ Today we also set up our learning infrastructure — GitHub repo, glossary, skil
 
 ---
 
+## 🏢 How real companies use DevOps
+
+| Company | How they use DevOps |
+|---------|-------------------|
+| **Netflix** | Deploys code 1000s of times per day using CI/CD pipelines |
+| **Amazon** | Deploys every 11.7 seconds using automated pipelines |
+| **Google** | Manages millions of servers using IaC and automation |
+| **Airbnb** | Uses Kubernetes to run 1000+ microservices reliably |
+| **Spotify** | Built Backstage — an internal developer platform used by 1000s of companies |
+
+> 💡 DevOps is not a startup thing or a big company thing. Every company that builds software needs it.
+
+---
+
 ## 🤔 What is DevOps?
 
 Imagine a company building a mobile app.
@@ -91,6 +105,54 @@ MLOps, AI Agents, Capstone project, Portfolio and job readiness
 
 ---
 
+## 🏗️ DevOps Architecture — The Big Picture
+
+This is what a modern DevOps system looks like. By Day 90 you will have built this:
+
+```
+Developer writes code
+        │
+        ▼
+┌───────────────┐
+│    GitHub     │  ← Version control (Day 5-7)
+└───────┬───────┘
+        │ push triggers
+        ▼
+┌───────────────┐
+│ GitHub Actions│  ← CI/CD pipeline (Day 15-20)
+│  Build        │
+│  Test         │
+│  Security scan│
+│  Docker build │
+└───────┬───────┘
+        │ image pushed
+        ▼
+┌───────────────┐
+│  Docker Hub   │  ← Container registry (Day 8-14)
+│  / AWS ECR    │
+└───────┬───────┘
+        │ deploy
+        ▼
+┌───────────────┐
+│  Kubernetes   │  ← Orchestration (Day 31-40)
+│  on AWS EKS   │
+└───────┬───────┘
+        │ monitored by
+        ▼
+┌───────────────┐
+│  Prometheus   │  ← Monitoring (Day 47-53)
+│  + Grafana    │
+└───────┬───────┘
+        │ alerts trigger
+        ▼
+┌───────────────┐
+│   AI Agent    │  ← Auto-remediation (Day 76-78)
+│  auto-fixes   │
+└───────────────┘
+```
+
+---
+
 ## 📁 What we built today
 
 ### 1. GitHub Repository
@@ -102,14 +164,11 @@ Anyone in the world can follow along.
 
 ### 2. Glossary — `glossary.md`
 50+ key terms explained in plain English.
-
 Covers: DevOps concepts, Containers, Cloud, Monitoring, AI/MLOps, Security, Networking.
-
 This grows every week as we learn new things.
 
 ### 3. Skills Audit — `skills-audit.md`
 An honest map of every skill we need to learn — starting from zero.
-
 Updated every 30 days to show real progress.
 
 ---
@@ -126,7 +185,19 @@ Updated every 30 days to show real progress.
 
 ---
 
-## ❓ Common beginner questions
+## 🔧 Common beginner mistakes on Day 1
+
+| Mistake | Why it happens | Fix |
+|---------|---------------|-----|
+| Making GitHub repo private | Fear of judgment | Make it public — that's the whole point |
+| Waiting until setup is perfect | Perfectionism | Ship it now, improve later |
+| Skipping the skills audit | It feels unnecessary | It's your roadmap — do it honestly |
+| Not posting on LinkedIn | Fear of what people think | Post anyway — nobody judges beginners who try |
+| Trying to learn everything at once | Excitement overload | Trust the plan — one day at a time |
+
+---
+
+## ❓ Frequently asked questions
 
 **Q: Do I need a computer science degree to learn DevOps?**
 No. DevOps is a practical skill. What matters is what you can build — not what certificate you have.
@@ -135,7 +206,7 @@ No. DevOps is a practical skill. What matters is what you can build — not what
 It has a lot of tools. But each tool solves a specific problem. Once you understand the problem, the tool makes sense. We learn both together.
 
 **Q: How long does it take to get a job in DevOps?**
-With consistent daily practice and a strong portfolio — 3 to 6 months is realistic. That's exactly what this 90-day journey is building towards.
+With consistent daily practice and a strong portfolio — 3 to 6 months is realistic. That's exactly what this 90-day journey builds towards.
 
 **Q: Do I need to know programming?**
 Basic scripting (Bash, Python) is needed. We cover both from scratch in this journey — no prior experience required.
@@ -145,11 +216,33 @@ Cloud Engineers focus on building cloud infrastructure (AWS, Azure, GCP). DevOps
 
 ---
 
-## 📚 Want to learn more?
+## 🎯 Interview questions — practice these after Day 1
 
-- [What is DevOps — AWS](https://aws.amazon.com/devops/what-is-devops/)
+These are real questions asked in DevOps interviews. Practice answering them out loud.
+
+1. **What is DevOps and why does it matter?**
+   > Answer: DevOps is a culture and set of practices that brings development and operations together to deliver software faster and more reliably. It matters because it reduces deployment time from months to hours and catches problems before users see them.
+
+2. **What is the difference between CI and CD?**
+   > CI (Continuous Integration) = automatically building and testing code every time a developer pushes changes. CD (Continuous Delivery) = automatically deploying that tested code to production or staging.
+
+3. **What is Infrastructure as Code?**
+   > Writing your infrastructure (servers, networks, databases) as code files instead of clicking through a console. Benefits: version controlled, repeatable, auditable, automated.
+
+4. **What is the difference between DevOps and Agile?**
+   > Agile is about how teams plan and build software (sprints, user stories). DevOps is about how software gets deployed and operated. They complement each other — Agile builds it, DevOps ships it.
+
+5. **What tools have you used in DevOps?**
+   > Answer honestly based on what you know. Then add: "I'm currently on a 90-day journey learning Docker, Kubernetes, Terraform, GitHub Actions, and AI integration — here's my GitHub with daily progress."
+
+---
+
+## 📚 Resources to go deeper
+
 - [DevOps Roadmap 2026 — roadmap.sh](https://roadmap.sh/devops)
+- [What is DevOps — AWS](https://aws.amazon.com/devops/what-is-devops/)
 - [GitHub Docs — Getting Started](https://docs.github.com/en/get-started)
+- [The Phoenix Project — book about DevOps culture](https://www.goodreads.com/book/show/17255186-the-phoenix-project)
 
 ---
 
@@ -157,6 +250,7 @@ Cloud Engineers focus on building cloud infrastructure (AWS, Azure, GCP). DevOps
 
 | File | What it is |
 |------|-----------|
+| `README.md` | This file — Day 1 complete guide |
 | `glossary.md` | 50+ DevOps + AI terms explained in plain English |
 | `skills-audit.md` | Honest skill gap analysis — starting from zero |
 
