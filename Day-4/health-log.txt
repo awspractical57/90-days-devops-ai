@@ -1,0 +1,7 @@
+Disk Usage is 1% - all good 
+
+----- Checking service ------
+nginx: inactive
+cron: active
+ssh: inactive
+LOG Saved to health-2026-05-01.log
