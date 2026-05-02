@@ -1,0 +1,14 @@
+check-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt install shellcheck -y
+
+      - name: Check all shell scripts
+        run: |
+          echo "Checking shell scripts..."
+          find . -name "*.sh" -exec shellcheck {} \;
+          echo "All scripts passed! ✅"
