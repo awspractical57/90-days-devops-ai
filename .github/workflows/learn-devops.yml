@@ -1,0 +1,47 @@
+name: DevOps Learning Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  hello-devops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print welcome message
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show current date
+        run: date
+
+      - name: Show system info
+        run: uname -a
+
+      - name: List repo files
+        run: ls -la
+
+      - name: Run a simple health check
+        run: |
+          echo "Running health checks..."
+          df -h
+          free -h
+          echo "All checks passed!"
+  check-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt install shellcheck -y
+
+      - name: Check all shell scripts
+        run: |
+          echo "Checking shell scripts..."
+          find . -name "*.sh" -exec shellcheck {} \;
+          echo "All scripts passed! ✅"
