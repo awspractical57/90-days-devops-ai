@@ -1,0 +1,44 @@
+services:
+  # Web server
+  web:
+    image: nginx:alpine
+    container_name: devops-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    networks:
+      - devops-network
+    depends_on:
+      - api
+
+  # Python API
+  api:
+    image: awspractical57/devops-api:v1
+    container_name: devops-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    networks:
+      - devops-network
+
+  # Database
+  db:
+    image: postgres:15-alpine
+    container_name: devops-db
+    environment:
+      - POSTGRES_DB=devopsdb
+      - POSTGRES_USER=devops
+      - POSTGRES_PASSWORD=devops123
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - devops-network
+
+volumes:
+  db-data:
+
+networks:
+  devops-network:
+    driver: bridge
