@@ -1,0 +1,77 @@
+name: Docker CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Day-9/python-ap/**'
+      - '.github/workflows/docker-cicd.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'Day-9/python-ap/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          cd Day-9/python-ap
+          docker build -t devops-api:test .
+          echo "✅ Image built successfully"
+
+      - name: Test the image
+        run: |
+          docker run -d -p 8000:8000 --name test-api devops-api:test
+          sleep 3
+          curl -f http://localhost:8000/health
+          echo "✅ Health check passed"
+          docker stop test-api
+          docker rm test-api
+
+  push-to-dockerhub:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/devops-api
+          tags: |
+            type=raw,value=latest
+            type=raw,value=v${{ github.run_number }}
+
+      - name: Build and push to Docker Hub
+        uses: docker/build-push-action@v5
+        with:
+          context: Day-9/python-ap
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Summary
+        run: |
+          echo "🐳 Image pushed to Docker Hub!"
+          echo "Tags: ${{ steps.meta.outputs.tags }}"
