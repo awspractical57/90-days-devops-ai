@@ -36,9 +36,41 @@ jobs:
           docker stop test-api
           docker rm test-api
 
-  push-to-dockerhub:
+  security-scan:
     runs-on: ubuntu-latest
     needs: build-and-test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build image for scanning
+        run: |
+          cd Day-9/python-ap
+          docker build -t devops-api:scan .
+
+      - name: Run Trivy vulnerability scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: devops-api:scan
+          format: table
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+          output: trivy-results.txt
+
+      - name: Show scan results
+        run: |
+          echo "🔍 Security Scan Results:"
+          cat trivy-results.txt
+
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-security-report
+          path: trivy-results.txt
+
+  push-to-dockerhub:
+    runs-on: ubuntu-latest
+    needs: [build-and-test, security-scan]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Checkout code
@@ -74,4 +106,5 @@ jobs:
       - name: Summary
         run: |
           echo "🐳 Image pushed to Docker Hub!"
+          echo "🔐 Security scan passed!"
           echo "Tags: ${{ steps.meta.outputs.tags }}"
