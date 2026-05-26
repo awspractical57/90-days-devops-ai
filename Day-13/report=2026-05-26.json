@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-05-26T12:39:00.265909",
+  "hostname": "HARSHA",
+  "disk": {
+    "total": "1007G",
+    "used": "3.6G",
+    "available": "953G",
+    "percent": "1%"
+  },
+  "memory": {
+    "total_mb": 7860,
+    "user_mb": 749,
+    "percent": "9.5%"
+  },
+  "docker": {
+    "running": 0,
+    "names": []
+  }
+}
