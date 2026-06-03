@@ -1,0 +1,29 @@
+{
+  "file": "sample.log",
+  "total_lines": 10,
+  "level_counts": {
+    "INFO": 5,
+    "ERROR": 3,
+    "WARN": 2
+  },
+  "error_count": 3,
+  "warning_count": 2,
+  "errors": [
+    "2026-05-26 10:02:11 ERROR Failed to connect to database",
+    "2026-05-26 10:02:25 ERROR Connection timeout after 3 retries",
+    "2026-05-26 10:03:45 ERROR Disk usage above 90% on /dev/sda1"
+  ],
+  "warnings": [
+    "2026-05-26 10:02:15 WARN  Retrying connection attempt 1/3",
+    "2026-05-26 10:02:20 WARN  Retrying connection attempt 2/3"
+  ],
+  "health": "CRITICAL",
+  "linux_stats": {
+    "total_lines": "10",
+    "error_count": "3",
+    "unique_ips": "2",
+    "first_entry": "2026-05-26 10:01:23",
+    "last_entry": "2026-05-26 10:04:30"
+  },
+  "generated_at": "2026-06-02T04:30:34.771812"
+}

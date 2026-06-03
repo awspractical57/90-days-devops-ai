@@ -1,0 +1,10 @@
+2026-05-26 10:01:23 INFO  Server started on port 8000
+2026-05-26 10:01:45 INFO  Request GET /health from 192.168.1.10
+2026-05-26 10:02:11 ERROR Failed to connect to database
+2026-05-26 10:02:15 WARN  Retrying connection attempt 1/3
+2026-05-26 10:02:20 WARN  Retrying connection attempt 2/3
+2026-05-26 10:02:25 ERROR Connection timeout after 3 retries
+2026-05-26 10:03:01 INFO  Request GET /health from 192.168.1.11
+2026-05-26 10:03:45 ERROR Disk usage above 90% on /dev/sda1
+2026-05-26 10:04:01 INFO  Cleanup job started
+2026-05-26 10:04:30 INFO  Cleanup job completed - freed 2.3GB
