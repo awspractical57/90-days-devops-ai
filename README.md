@@ -259,7 +259,7 @@ GET /dashboard → all metrics in one response
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-valajaharshatheja-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/valajaharshatheja/)
 [![GitHub](https://img.shields.io/badge/GitHub-awspractical57-black?style=flat-square&logo=github)](https://github.com/awspractical57)
-[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-awspractical57-blue?style=flat-square&logo=docker)](https://hub.docker.com/u/awspractical57)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-awspractical57-blue?style=flat-square&logo=docker)](https://hub.docker.com/u/awspracttical57)
 
 ---
 
