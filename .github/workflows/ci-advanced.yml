@@ -51,5 +51,5 @@ jobs:
     needs: test-matrix
     uses: ./.github/workflows/reusable-health-check.yml
     with:
-      image-name: awspractical57/devops-api:v1
+      image-name: awspracttical57/devops-api:v1
       port: '8000'
