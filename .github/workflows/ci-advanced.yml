@@ -46,3 +46,10 @@ jobs:
       - name: Write job summary
         run: |
           echo "## ✅ Python ${{ matrix.python-version }} passed" >> $GITHUB_STEP_SUMMARY
+  call-health-check:
+    name: Reusable Health Check
+    needs: test-matrix
+    uses: ./.github/workflows/reusable-health-check.yml
+    with:
+      image-name: awspractical57/devops-api:v1
+      port: '8000'
