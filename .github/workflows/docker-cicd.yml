@@ -10,6 +10,16 @@ on:
     branches: [ main ]
     paths:
       - 'Day-9/python-ap/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deploy to which environment?'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   build-and-test:
