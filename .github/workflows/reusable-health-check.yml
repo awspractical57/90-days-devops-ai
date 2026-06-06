@@ -1,0 +1,54 @@
+name: Reusable — Health Check
+
+on:
+  workflow_call:
+    inputs:
+      image-name:
+        description: 'Docker image to health check'
+        required: true
+        type: string
+      port:
+        description: 'Port to check'
+        required: false
+        type: string
+        default: '8000'
+    outputs:
+      health-status:
+        description: 'Health check result'
+        value: ${{ jobs.health-check.outputs.status }}
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.check.outputs.status }}
+
+    steps:
+      - name: Pull image
+        run: docker pull ${{ inputs.image-name }}
+
+      - name: Run container
+        run: |
+          docker run -d \
+            -p ${{ inputs.port }}:${{ inputs.port }} \
+            --name health-test \
+            ${{ inputs.image-name }}
+          sleep 5
+
+      - name: Run health check
+        id: check
+        run: |
+          if curl -f http://localhost:${{ inputs.port }}/health; then
+            echo "status=healthy" >> $GITHUB_OUTPUT
+            echo "✅ Health check passed!"
+          else
+            echo "status=unhealthy" >> $GITHUB_OUTPUT
+            echo "❌ Health check failed!"
+            exit 1
+          fi
+
+      - name: Cleanup
+        if: always()
+        run: |
+          docker stop health-test || true
+          docker rm health-test || true
