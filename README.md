@@ -128,7 +128,8 @@ By **Day 90**, I will have:
 | 012 | 2026-05-16 | DevSecOps — Trivy security scanning | Zero HIGH/CRITICAL vulnerabilities in pipeline | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 013 | 2026-05-17 | Python for DevOps fundamentals | Variables, loops, functions, API calls, subprocess | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 014 | 2026-05-18 | Advanced Linux + Week 2 Mini Project | awk/sed/grep mastery + DevOps Dashboard API | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
-| 015 | 2026-06-06 | GitHub Actions Advanced CI/CD | 🔄 In Progress | — |
+| 015 | 2026-06-06 | GitHub Actions Advanced CI/CD | Matrix builds, workflow_dispatch, reusable workflows | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 016 | 2026-06-07 | AWS CLI + boto3 | Health check, S3 manager, EC2 info | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 
 *Updated daily · LinkedIn: [valajaharshatheja](https://www.linkedin.com/in/valajaharshatheja/)*
 
