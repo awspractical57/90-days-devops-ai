@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+ec2-report-*.json
+ec2-monitor-*.json
