@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+s3-report-*.json
+downloaded-*/
