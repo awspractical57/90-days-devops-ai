@@ -131,6 +131,7 @@ By **Day 90**, I will have:
 | 015 | 2026-06-06 | GitHub Actions Advanced CI/CD | Matrix builds, workflow_dispatch, reusable workflows | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 016 | 2026-06-07 | AWS CLI + boto3 | Health check, S3 manager, EC2 info | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 017 | 2026-06-08 | Advanced boto3 EC2 | EC2 controller, scheduler, monitor, multi-account | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 018 | 2026-06-18 | AWS S3 Advanced | Versioning, lifecycle, bucket policy | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 
 *Updated daily · LinkedIn: [valajaharshatheja](https://www.linkedin.com/in/valajaharshatheja/)*
 
