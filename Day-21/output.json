@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "{\"message\": \"Health check passed\", \"day\": \"Day 21 of 90\", \"timestamp\": \"2026-11-04T07:46:05.228026\", \"event_received\": {\"source\": \"manual-test\", \"day\": 21}}"}
