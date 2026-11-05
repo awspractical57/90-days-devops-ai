@@ -1,0 +1,10 @@
+# Terraform state files - never commit
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+
+# crash logs
+crash.log
+*.tfplan
