@@ -137,6 +137,7 @@ By **Day 90**, I will have:
 | 021 | 2026-11-04 | AWS Lambda Serverless | Lambda, boto3, IAM role, zip deploy, function_active waiter | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 022 | 2026-11-04 | AWS CloudWatch Monitoring | Alarms, SNS, custom metrics, cost monitoring | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 023 | 2026-11-05 | AWS Cost Optimization | Cost Explorer, Budgets, savings analysis, waste scanner | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 024 | 2026-11-05 | Terraform Basics | main.tf, variables.tf, outputs.tf, S3 with IaC | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 
 *Updated daily · LinkedIn: [valajaharshatheja](https://www.linkedin.com/in/valajaharshatheja/)*
 
