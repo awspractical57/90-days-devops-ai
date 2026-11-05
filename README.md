@@ -44,8 +44,8 @@ By **Day 90**, I will have:
 |------|-------|--------|
 | Week 1 | Linux, Bash Scripting, Git, GitHub Actions | ✅ Complete |
 | Week 2 | Docker, Dockerfiles, Compose, DevSecOps, Python | ✅ Complete |
-| Week 3 | GitHub Actions Advanced, AWS + boto3 | 🔄 In Progress |
-| Week 4 | AWS Core Services, Terraform Intro | ⏳ Upcoming |
+| Week 3 | GitHub Actions Advanced, AWS + boto3 | ✅ Complete |
+| Week 4 | AWS Core Services, Terraform Intro | 🔄 In Progress |
 
 ### 🟡 Phase 2: Integration (Days 31–60)
 > *Integrating AI into real DevOps workflows*
@@ -132,6 +132,11 @@ By **Day 90**, I will have:
 | 016 | 2026-06-07 | AWS CLI + boto3 | Health check, S3 manager, EC2 info | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 017 | 2026-06-08 | Advanced boto3 EC2 | EC2 controller, scheduler, monitor, multi-account | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 | 018 | 2026-06-18 | AWS S3 Advanced | Versioning, lifecycle, bucket policy | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 019 | 2026-11-04 | AWS IAM Deep Dive | IAM users, groups, roles, custom policies, security report | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 020 | 2026-11-04 | AWS VPC Deep Dive | VPC, subnets, IGW, route tables, security groups | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 021 | 2026-11-04 | AWS Lambda Serverless | Lambda, boto3, IAM role, zip deploy, function_active waiter | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 022 | 2026-11-04 | AWS CloudWatch Monitoring | Alarms, SNS, custom metrics, cost monitoring | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
+| 023 | 2026-11-05 | AWS Cost Optimization | Cost Explorer, Budgets, savings analysis, waste scanner | [Post](https://www.linkedin.com/in/valajaharshatheja/) |
 
 *Updated daily · LinkedIn: [valajaharshatheja](https://www.linkedin.com/in/valajaharshatheja/)*
 
